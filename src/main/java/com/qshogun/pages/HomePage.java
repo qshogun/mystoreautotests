@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
 
-//    @FindBy(xpath = "//div[@id='_desktop_logo']/img")
+    //    @FindBy(xpath = "//div[@id='_desktop_logo']/img")
 //    private WebElement logoDesktop;
 
     @FindBy(id = "carousel")
