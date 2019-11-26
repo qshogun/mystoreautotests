@@ -20,6 +20,9 @@ public class LoggedOut extends BasePage {
     @FindBy(id = "submit-login")
     private WebElement signInButton;
 
+    @FindBy(xpath = "//div[@class='no-account']/a")
+    private WebElement createAccountLink;
+
 
 
     public void isAt() {
@@ -27,17 +30,17 @@ public class LoggedOut extends BasePage {
         Assert.assertTrue(logInHeader.isDisplayed());
         Assert.assertEquals("Login", driver.getTitle());
     }
-
     public void provideEmail(String emailAddress) {
         emailTextbox.sendKeys(emailAddress);
     }
-
     public void providePassword(String password) {
         passwordTextbox.sendKeys(password);
     }
-
     public void signIn() {
         signInButton.click();
+    }
+    public void createAccountClick() {
+        createAccountLink.click();
     }
 
     public LoggedOut(WebDriver driver) {
