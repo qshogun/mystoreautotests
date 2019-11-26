@@ -28,7 +28,7 @@ public class HomePage extends BasePage {
     }
 
     public void isAt() {
-        waitForVisibilityOf(carouselSlider);
+        waitToBeClickable(carouselSlider);
         Assert.assertTrue(carouselSlider.isDisplayed());
         Assert.assertEquals("TesterSii", driver.getTitle());
     }

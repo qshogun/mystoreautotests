@@ -10,10 +10,10 @@ public class NavigationMenu extends BasePage {
     @FindBy(xpath = "//div[@id='_desktop_logo']/img")
     private WebElement logoDesktop;
 
-    @FindBy(xpath = "//div[@id=_'desktop_contact_link']/div[@id='contact-link']")
+    @FindBy(xpath = "//div[@id='_desktop_contact_link']/div[@id='contact-link']")
     private WebElement contactUsLinkDesktop;
 
-    @FindBy(xpath = "//div[@id='_desktop_user_info']/a[contains(@title,'Log in')]")
+    @FindBy(xpath = "//div[@id='_desktop_user_info']//span[contains(text(),'Sign in')]")
     private WebElement signInButtonDesktop;
 
     @FindBy(xpath = "//div[@id='_desktop_cart']/div[@class='header']")

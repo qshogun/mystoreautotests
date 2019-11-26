@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class CreateAccount extends BasePage {
 
-    @FindBy(xpath = "//header[@class='page-header']/h1[contains(text(),'create')]")
+    @FindBy(xpath = "//header[@class='page-header']//h1[contains(text(),'Create')]")
     private WebElement createAccountHeader;
 
     @FindBy(xpath = "//input[@name='id_gender' and @value='1']")
@@ -35,7 +35,7 @@ public class CreateAccount extends BasePage {
     @FindBy(name = "newsletter")
     private WebElement newsletterCheckbox;
 
-    @FindBy(xpath = "//button[contains(text(),'SAVE') and @type='submit']")
+    @FindBy(xpath = "//button[contains(text(),'Save') and @type='submit']")
     private WebElement createAccountSubmitButton;
 
 
