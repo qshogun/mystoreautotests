@@ -16,6 +16,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Tests {
 
+    //region fake create account credentials
+    Faker faker = new Faker();
+    String firstName = faker.name().firstName();
+    String lastName = faker.name().lastName();
+    String emailAddress = faker.internet().emailAddress();
+    String password = faker.internet().password();
+    String messageText = faker.country().capital();
+    //endregion
     //region pages
     private WebDriver driver;
     private HomePage homePage;
@@ -25,16 +33,6 @@ public class Tests {
     private ContactUs contactUs;
     private MyAccount myAccount;
     //endregion
-
-    //region fake create account credentials
-    private Faker faker = new Faker();
-    private String firstName = faker.name().firstName();
-    private String lastName = faker.name().lastName();
-    private String emailAddress = faker.internet().emailAddress();
-    private String password = faker.internet().password();
-    private String messageText = faker.country().capital();
-    //endregion
-
     //region login credentials - correct
     private String emailCorrect = "johndoe@gmail.com";
     private String passwordCorrect = "asdf1234";
@@ -103,7 +101,6 @@ public class Tests {
         myAccount
                 .isAt();
     }
-
 
     //tests - contact us
     @Test
