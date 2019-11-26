@@ -40,15 +40,6 @@ public class NavigationMenu extends BasePage {
     @FindBy(id = "category-9")
     private WebElement artDropdownMenu;
 
-    @FindBy(id = "carousel")
-    private WebElement carouselSlider;
-
-    @FindBy(xpath = "//div[@id='carousel']/a[contains(@class,'left')]")
-    private WebElement carouselSlideLeftButton;
-
-    @FindBy(xpath = "//div[@id='carousel']/a[contains(@class,'right')]")
-    private WebElement carouselSlideRightButton;
-
 
     public NavigationMenu(WebDriver driver) {
         super(driver);
