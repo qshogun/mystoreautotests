@@ -1,4 +1,4 @@
-package com.qshogun.pages.myaccount;
+package com.qshogun.pages.authentication;
 
 import com.qshogun.common.BasePage;
 import org.junit.Assert;
