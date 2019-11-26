@@ -7,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class NavigationMenu extends BasePage {
 
+    @FindBy(xpath = "//div[@id='_desktop_logo']/img")
+    private WebElement logoDesktop;
+
     @FindBy(xpath = "//div[@id=_'desktop_contact_link']/div[@id='contact-link']")
     private WebElement contactUsLinkDesktop;
 
@@ -52,6 +55,10 @@ public class NavigationMenu extends BasePage {
 
     public NavigationMenu(WebDriver driver) {
         super(driver);
+    }
+
+    public void clickLogoDesktop() {
+        logoDesktop.click();
     }
 
     public void clickContactUsDesktop() {
