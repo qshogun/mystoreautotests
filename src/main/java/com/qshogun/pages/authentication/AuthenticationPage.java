@@ -1,4 +1,4 @@
-package com.qshogun.pages.myaccount;
+package com.qshogun.pages.authentication;
 
 import com.qshogun.common.BasePage;
 import org.junit.Assert;
@@ -24,26 +24,30 @@ public class AuthenticationPage extends BasePage {
     private WebElement createAccountLink;
 
 
+    public AuthenticationPage(WebDriver driver) {
+        super(driver);
+    }
 
-    public void isAt() {
+    public AuthenticationPage isAt() {
         waitForVisibilityOf(logInHeader);
         Assert.assertTrue(logInHeader.isDisplayed());
         Assert.assertEquals("Login", driver.getTitle());
+        return this;
     }
-    public void provideEmail(String emailAddress) {
+    public AuthenticationPage provideEmail(String emailAddress) {
         emailTextbox.sendKeys(emailAddress);
+        return this;
     }
-    public void providePassword(String password) {
+    public AuthenticationPage providePassword(String password) {
         passwordTextbox.sendKeys(password);
+        return this;
     }
-    public void signIn() {
+    public AuthenticationPage signIn() {
         signInButton.click();
+        return this;
     }
-    public void createAccountClick() {
+    public AuthenticationPage createAccountClick() {
         createAccountLink.click();
-    }
-
-    public AuthenticationPage(WebDriver driver) {
-        super(driver);
+        return this;
     }
 }
