@@ -42,35 +42,45 @@ public class CreateAccount extends BasePage {
     public CreateAccount(WebDriver driver) {
         super(driver);
     }
-    public void isAt() {
+    public CreateAccount isAt() {
         waitForVisibilityOf(createAccountHeader);
         Assert.assertTrue(createAccountHeader.isDisplayed());
+        return this;
     }
-    public void selectMr() {
+    public CreateAccount selectMr() {
         mrRadiobutton.click();
+        return this;
     }
-    public void selectMrs() {
+    public CreateAccount selectMrs() {
         mrsRadiobutton.click();
+        return this;
     }
-    public void provideFirstName(String firstName) {
+    public CreateAccount provideFirstName(String firstName) {
         firstnameTextbox.sendKeys(firstName);
+        return this;
     }
-    public void provideLastName(String lastName) {
+    public CreateAccount provideLastName(String lastName) {
         lastnameTextbox.sendKeys(lastName);
+        return this;
     }
-    public void provideEmail(String emailAddress) {
+    public CreateAccount provideEmail(String emailAddress) {
         emailTextbox.sendKeys(emailAddress);
+        return this;
     }
-    public void providePassword(String password) {
+    public CreateAccount providePassword(String password) {
         passwordTextbox.sendKeys(password);
+        return this;
     }
-    public void receiveOffers() {
+    public CreateAccount receiveOffers() {
         receiveOffersCheckbox.click();
+        return this;
     }
-    public void signUpForNewsletter() {
+    public CreateAccount signUpForNewsletter() {
         newsletterCheckbox.click();
+        return this;
     }
-    public void createAccountSubmit() {
+    public CreateAccount createAccountSubmit() {
         createAccountSubmitButton.click();
+        return this;
     }
 }

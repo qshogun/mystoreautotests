@@ -55,15 +55,15 @@ public class CreateAccountTest {
         authenticationPage.isAt();
         authenticationPage.createAccountClick();
         createAccount = new CreateAccount(driver);
-        createAccount.isAt();
-        createAccount.selectMr();
-        createAccount.provideFirstName(firstName);
-        createAccount.provideLastName(lastName);
-        createAccount.provideEmail(emailAddress);
-        createAccount.providePassword(password);
-        createAccount.receiveOffers();
-        createAccount.signUpForNewsletter();
-        createAccount.createAccountSubmit();
+        createAccount.isAt()
+                .selectMr()
+                .provideFirstName(firstName)
+                .provideLastName(lastName)
+                .provideEmail(emailAddress)
+                .providePassword(password)
+                .receiveOffers()
+                .signUpForNewsletter()
+                .createAccountSubmit();
         homePage = new HomePage(driver);
         homePage.isLoggedIn();
 
