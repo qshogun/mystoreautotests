@@ -20,6 +20,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[@id='carousel']/a[contains(@class,'right')]")
     private WebElement carouselSlideRightButton;
 
+    @FindBy(className = "account")
+    private WebElement accountHolderSignedIn;
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -28,5 +31,9 @@ public class HomePage extends BasePage {
         waitForVisibilityOf(carouselSlider);
         Assert.assertTrue(carouselSlider.isDisplayed());
         Assert.assertEquals("TesterSii", driver.getTitle());
+    }
+    public void isLoggedIn() {
+        waitToBeClickable(accountHolderSignedIn);
+        Assert.assertTrue(accountHolderSignedIn.isDisplayed());
     }
 }
