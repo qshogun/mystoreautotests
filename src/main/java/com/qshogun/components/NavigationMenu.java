@@ -1,13 +1,14 @@
 package com.qshogun.components;
 
 import com.qshogun.common.BasePage;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class NavigationMenu extends BasePage {
 
-    @FindBy(xpath = "//div[@id='_desktop_logo']/img")
+    @FindBy(xpath = "//div[@id='_desktop_logo']//img")
     private WebElement logoDesktop;
 
     @FindBy(xpath = "//div[@id='_desktop_contact_link']/div[@id='contact-link']")
@@ -48,20 +49,26 @@ public class NavigationMenu extends BasePage {
         super(driver);
     }
 
-    public void clickLogoDesktop() {
+    public NavigationMenu isPageLoaded() {
+        waitForVisibilityOf(logoDesktop);
+        Assert.assertTrue(logoDesktop.isDisplayed());
+        return this;
+    }
+    public NavigationMenu clickLogoDesktop() {
         logoDesktop.click();
+        return this;
     }
-
-    public void clickContactUsDesktop() {
+    public NavigationMenu clickContactUsDesktop() {
         contactUsLinkDesktop.click();
+        return this;
     }
-
-    public void clickMyAccountDesktop() {
+    public NavigationMenu clickMyAccountDesktop() {
         signInButtonDesktop.click();
+        return this;
     }
-
-    public void clickShoppingCartDesktop() {
+    public NavigationMenu clickShoppingCartDesktop() {
         shoppingCartDesktop.click();
+        return this;
     }
 
 }
