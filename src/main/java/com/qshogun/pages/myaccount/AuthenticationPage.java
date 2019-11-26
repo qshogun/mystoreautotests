@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoggedOut extends BasePage {
+public class AuthenticationPage extends BasePage {
 
     @FindBy(xpath = "//header[@class='page-header']/h1[contains(text(),'Log in')]")
     private WebElement logInHeader;
@@ -43,7 +43,7 @@ public class LoggedOut extends BasePage {
         createAccountLink.click();
     }
 
-    public LoggedOut(WebDriver driver) {
+    public AuthenticationPage(WebDriver driver) {
         super(driver);
     }
 }

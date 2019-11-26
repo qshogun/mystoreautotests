@@ -4,7 +4,7 @@ import com.github.javafaker.Faker;
 import com.qshogun.components.NavigationMenu;
 import com.qshogun.pages.HomePage;
 import com.qshogun.pages.myaccount.CreateAccount;
-import com.qshogun.pages.myaccount.LoggedOut;
+import com.qshogun.pages.myaccount.AuthenticationPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -18,7 +18,7 @@ public class CreateAccountTest {
     private WebDriver driver;
     private HomePage homePage;
     private NavigationMenu navigationMenu;
-    private LoggedOut loggedOut;
+    private AuthenticationPage authenticationPage;
     private CreateAccount createAccount;
     //endregion
 
@@ -51,9 +51,9 @@ public class CreateAccountTest {
         homePage.isAt();
         navigationMenu = new NavigationMenu(driver);
         navigationMenu.clickMyAccountDesktop();
-        loggedOut = new LoggedOut(driver);
-        loggedOut.isAt();
-        loggedOut.createAccountClick();
+        authenticationPage = new AuthenticationPage(driver);
+        authenticationPage.isAt();
+        authenticationPage.createAccountClick();
         createAccount = new CreateAccount(driver);
         createAccount.isAt();
         createAccount.selectMr();
