@@ -1,6 +1,8 @@
 package com.qshogun.pages.authentication;
 
 import com.qshogun.common.BasePage;
+import com.qshogun.model.User;
+import com.qshogun.pages.HomePage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -42,45 +44,63 @@ public class CreateAccount extends BasePage {
     public CreateAccount(WebDriver driver) {
         super(driver);
     }
+
     public CreateAccount isAt() {
         waitForVisibilityOf(createAccountHeader);
         Assert.assertTrue(createAccountHeader.isDisplayed());
         return this;
     }
+
     public CreateAccount selectMr() {
         mrRadiobutton.click();
         return this;
     }
+
     public CreateAccount selectMrs() {
         mrsRadiobutton.click();
         return this;
     }
+
     public CreateAccount provideFirstName(String firstName) {
         firstnameTextbox.sendKeys(firstName);
         return this;
     }
+
     public CreateAccount provideLastName(String lastName) {
         lastnameTextbox.sendKeys(lastName);
         return this;
     }
+
     public CreateAccount provideEmail(String emailAddress) {
         emailTextbox.sendKeys(emailAddress);
         return this;
     }
+
     public CreateAccount providePassword(String password) {
         passwordTextbox.sendKeys(password);
         return this;
     }
+
     public CreateAccount receiveOffers() {
         receiveOffersCheckbox.click();
         return this;
     }
+
     public CreateAccount signUpForNewsletter() {
         newsletterCheckbox.click();
         return this;
     }
-    public CreateAccount createAccountSubmit() {
-        createAccountSubmitButton.click();
+
+    public CreateAccount registerUser(User user) {
+        provideFirstName(user.getFirstName());
+        provideLastName(user.getLastName());
+        provideEmail(user.getEmailAddress());
+        providePassword(user.getPassword());
         return this;
+    }
+
+    public HomePage createAccountSubmit() {
+        createAccountSubmitButton.click();
+        return new HomePage(driver);
     }
 }
