@@ -11,8 +11,8 @@ import org.testng.ITestResult;
 public class TestJiraListener implements ITestListener {
 
     private String jiraUrl = "https://pkurszewski.atlassian.net/";
-    private String jiraUsername = "pkurszewski@gmail.com";
-    private String jiraPassword = "My6mNhLbGFG25939Gd8qA834";
+    private String jiraUsername = ":)))";
+    private String jiraPassword = ":)))";
     private String jiraProject = "MYS";
 
 
