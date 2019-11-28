@@ -2,11 +2,13 @@ package tests;
 
 import com.github.javafaker.Faker;
 import com.qshogun.components.NavigationMenu;
+import com.qshogun.model.User;
 import com.qshogun.pages.ContactUs;
 import com.qshogun.pages.HomePage;
 import com.qshogun.pages.authentication.CreateAccount;
 import com.qshogun.pages.authentication.AuthenticationPage;
 import com.qshogun.pages.authentication.myaccount.MyAccount;
+import com.qshogun.provider.DataFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -56,6 +58,8 @@ public class Tests {
     @Test
     public void createAccountTest() {
         System.out.println("in createAccountTest");
+        User user = DataFactory.getUser();
+
         homePage = new HomePage(driver);
         homePage
                 .isAt();
@@ -70,14 +74,10 @@ public class Tests {
         createAccount
                 .isAt()
                 .selectMr()
-                .provideFirstName(firstName)
-                .provideLastName(lastName)
-                .provideEmail(emailAddress)
-                .providePassword(password)
+                .registerUser(user)
                 .receiveOffers()
                 .signUpForNewsletter()
-                .createAccountSubmit();
-        homePage
+                .createAccountSubmit()
                 .isLoggedIn();
 
     }
