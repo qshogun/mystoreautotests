@@ -1,6 +1,7 @@
 package com.qshogun.pages;
 
 import com.qshogun.common.BasePage;
+import com.qshogun.model.ContactUsMessageTemplate;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -61,7 +62,18 @@ public class ContactUs extends BasePage {
         Assert.assertTrue(messageSentSuccessfullyBlock.isDisplayed());
         return this;
     }
-
+    public ContactUs sendMessageCustomerservice(ContactUsMessageTemplate messageTemplate) {
+        chooseSubjectCustomerservice();
+        provideEmail(messageTemplate.getEmailAddress());
+        provideMessage(messageTemplate.getMessageToBeSent());
+        return this;
+    }
+    public ContactUs sendMessageWebmaster(ContactUsMessageTemplate messageTemplate) {
+        chooseSubjectWebmaster();
+        provideEmail(messageTemplate.getEmailAddress());
+        provideMessage(messageTemplate.getMessageToBeSent());
+        return this;
+    }
     public ContactUs(WebDriver driver) {
         super(driver);
     }
