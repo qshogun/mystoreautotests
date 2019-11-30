@@ -1,6 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import com.qshogun.common.TestsSuite;
 import com.qshogun.components.NavigationMenu;
 import com.qshogun.model.User;
 import com.qshogun.pages.ContactUs;
@@ -16,7 +17,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Tests {
+public class Tests extends TestsSuite {
 
     //region fake create account credentials
     Faker faker = new Faker();
@@ -27,7 +28,7 @@ public class Tests {
     String messageText = faker.country().capital();
     //endregion
     //region pages
-    private WebDriver driver;
+    //private WebDriver driver;
     private HomePage homePage;
     private NavigationMenu navigationMenu;
     private AuthenticationPage authenticationPage;
@@ -39,20 +40,6 @@ public class Tests {
     private String emailCorrect = "johndoe@gmail.com";
     private String passwordCorrect = "asdf1234";
     //endregion
-
-    @Before
-    public void before() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-        driver.get("http://5.196.7.235/");
-    }
-
-    @After
-    public void after() {
-        driver.quit();
-    }
 
     //tests - account creation, logging in
     @Test
